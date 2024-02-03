@@ -9,33 +9,50 @@ using namespace std;
 // Function to display the elements of the queue
 void showq(queue<int> gq)
 {
-	queue<int> g = gq;//
-	while (!g.empty()) {
-		cout << '\t' << g.front();
+    // Create a copy of the queue to avoid modifying the original queue
+    queue<int> g = gq;
 
-		g.pop();
-	}
-	cout << '\n';
+    // Iterate through the elements of the queue until it becomes empty
+    while (!g.empty()) {
+        // Print the front element of the queue
+        cout << '\t' << g.front();
+
+        // Remove the front element from the queue
+        g.pop();
+    }
+    cout << '\n';
 }
-//
+
 // Driver Code
 int main()
 {
-	queue<int> gquiz;
-	gquiz.push(10);
-	gquiz.push(20);
-	gquiz.push(30);
-	//
-	cout << "The queue gquiz is : ";
-	showq(gquiz);
+    // Declare a queue of integers
+    queue<int> gquiz;
 
-	cout << "\ngquiz.size() : " << gquiz.size();
-	cout << "\ngquiz.front() : " << gquiz.front();
-	cout << "\ngquiz.back() : " << gquiz.back();
+    // Push elements into the queue
+    gquiz.push(10);
+    gquiz.push(20);
+    gquiz.push(30);
 
-	cout << "\ngquiz.pop() : ";
-	gquiz.pop();
-	showq(gquiz);
+    // Display the elements of the queue
+    cout << "The queue gquiz is : ";
+    showq(gquiz);
 
-	return 0;
+    // Display the size of the queue
+    cout << "\ngquiz.size() : " << gquiz.size();
+
+    // Display the front element of the queue
+    cout << "\ngquiz.front() : " << gquiz.front();
+
+    // Display the back element of the queue
+    cout << "\ngquiz.back() : " << gquiz.back();
+
+    // Remove an element from the front of the queue
+    cout << "\ngquiz.pop() : ";
+    gquiz.pop();
+
+    // Display the elements of the modified queue
+    showq(gquiz);
+
+    return 0;
 }
