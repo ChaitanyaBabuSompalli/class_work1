@@ -1,29 +1,24 @@
-#include <iostream> 
-// This allows the usage of functions like cout and cin for console I/O
-#include <stack>
-using namespace std;
+#include <iostream>     //Include the input/output stream library for using cout.
+#include <stack>        //Include the stack library for using the stack data structure.
+using namespace std;    //Use the standard namespace to simplify code
+int main()              //The main function where the execution of the program begins.
+{
+	stack <int> stack; //Declare a stack of integers named 'stack'.
+	stack.push(21);    // Push the value 21 onto the stack.
+	stack.push(22);    // Push the value 22 onto the stack.
+	stack.push(23);    // Push the value 23 onto the stack.
+	stack.push(24);    // Push the value 24 onto the stack.
+	stack.push(25);    // Push the value 25 onto the stack.
+	int num = 0;       //Declare an integer variable 'num' and initialize it with the value 0.
+	stack.push(num);   //Push the value of 'num' (0) onto the stack.
+	stack.pop();       //Pop (remove) the top element from the stack
+	stack.pop();       //Pop (remove) the top element from the stack
+	stack.pop();       //Pop (remove) the top element from the stack
+	while (!stack.empty()) // Loop until the stack is empty.
+	{
+		cout << stack.top() << " ";//Print the top element of the stack followed by a space.
+		stack.pop();     //Pop (remove) the top element from the stack.
 
-int main() {
-    // Creating an integer stack named 'stack'
-    stack<int> stack;//
-
-    // Pushing values into the stack
-    stack.push(21); // Pushing 21 into the stack
-    stack.push(22); // Pushing 22 into the stack
-    stack.push(24); // Pushing 24 into the stack
-    stack.push(25); // Pushing 25 into the stack
-
-    int num = 0;
-    stack.push(num); // Pushing the value of 'num' (which is 0) into the stack
-    stack.pop();     // Popping the top element from the stack (removing 0)
-    stack.pop();     // Popping the top element from the stack (removing 25)
-    stack.pop();     // Popping the top element from the stack (removing 24)
-
-    // Printing the remaining elements in the stack
-    while (!stack.empty()) {
-        cout << stack.top() << " "; // Outputting the top element of the stack
-        stack.pop();
-    }
-
-    return 0; // Indicating successful completion of the program
+	}
+	return 0;                     //Indicate successful execution of the program.
 }
