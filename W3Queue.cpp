@@ -1,56 +1,57 @@
-// C++ code to illustrate Queue in 
-// Standard Template Library (STL)
+#include <iostream>           //To use cout, include the input/output stream library.
+#include <queue>              //To use the queue data structure, include the queue library.
 
-#include <iostream>
-// This allows the usage of functions like cout and cin for console I/O
-#include <queue>
+using namespace std;          //To make code simpler, use the standard namespace 
 
-using namespace std;
 
-// Function to display the elements of the queue
-void showq(queue<int> gq)
+void showq(queue<int> gq)      //Create a function called "showq" that accepts an integer queue as a parameter.
+
 {
-    // Creating a copy of the queue to avoid modifying the original
-    queue<int> g = gq;
 
-    // Loop through the queue until it's empty
-    while (!g.empty()) {
-        // Display the front element of the queue
-        cout << '\t' << g.front();
+	queue<int> g = gq;     //Make a replica of the input queue 'gq' named 'g'.
+	while (!g.empty())      //Loop until the queue 'g' is empty.
+	{
+		cout << '\t' << g.front();  //Print the front element of the queue with a tab character.
+		g.pop();        //Remove the front element from the queue.
+	}
 
-        // Remove the front element from the queue
-        g.pop();
-    }
-    cout << '\n';
+	cout << '\n';                    //Print a newline character after printing all elements.
+
 }
 
-// Driver Code
+
+
+// The main function where the execution of the program begins.
 int main()
 {
-    // Creating an empty queue named gquiz
-    queue<int> gquiz;
 
-    // Adding elements to the queue
-    gquiz.push(10);
-    gquiz.push(20);
-    gquiz.push(30);
+	queue<int> gquiz;         //Declare the 'gquiz' integer queue.
 
-    // Displaying the elements of the queue using the showq function
-    cout << "The queue gquiz is : ";
-    showq(gquiz);
+	gquiz.push(10);           //Push the value 10 to the back of the queue.
 
-    // Displaying the size, front, and back of the queue
-    cout << "\ngquiz.size() : " << gquiz.size();
-    cout << "\ngquiz.front() : " << gquiz.front();
-    cout << "\ngquiz.back() : " << gquiz.back();
+	gquiz.push(20);            //Push the value 20 to the back of the queue.
 
-    // Removing an element from the front of the queue
-    cout << "\ngquiz.pop() : ";
-    gquiz.pop();
+	gquiz.push(30);            //Push the value 30 to the back of the queue.
 
-    // Displaying the modified queue after popping an element
-    showq(gquiz);
+	cout << "The queue gquiz is : ";     //Print a message indicating the queue is being displayed
 
-    // Exiting the program
-    return 0;
+	showq(gquiz);               //To see the queue's contents, use the'showq' function.
+
+
+
+	cout << "\ngquiz.size() : " << gquiz.size();   //Use the'size' member function to print the queue's size.
+
+	cout << "\ngquiz.front() : " << gquiz.front();  //Print the front element of the queue using 'front' member function.
+
+	cout << "\ngquiz.back() : " << gquiz.back();    //Print the back element of the queue using 'back' member function.
+
+
+
+	cout << "\ngquiz.pop() : ";         //Print a message to indicate that an element has been removed from the queue.
+
+	gquiz.pop();                        //Remove the front element from the queue.
+
+	showq(gquiz);                       //Call the 'showq' function to display the updated elements of the queue.
+	return 0;                           // Indicate successful execution of the program.
+
 }
